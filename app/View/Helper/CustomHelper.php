@@ -45,6 +45,15 @@ class CustomHelper extends AppHelper {
         }
     }
 
+    public function datetimeFormatMessage($date_param){
+        if($date_param!=null){
+            $date_param = date_create($date_param);
+            return date_format($date_param,'M d, Y g:ia');
+        }else{
+            return 'n/a';
+        }
+    }
+
     public function genderDisplay($gender){
         if($gender!=null){
             switch($gender):

@@ -1,3 +1,4 @@
+<!-- <?php echo debug($messages); ?> -->
 <div class="row">
     <div id="messages_body" class="col-lg-12 col-sm-12">
         <div class="card mt-3">
@@ -14,7 +15,15 @@
                     <div class="row p-0">
                         <div class="col-md-12">
                             <div class="message_content p-2">
-                            
+                        
+                            <div id="message-list">
+                                <?php foreach ($messages as $msg): ?>
+                                    <!-- Your message display code goes here -->
+                                    <?php //$msgp['messages']['content']; ?>
+                                <?php endforeach; ?>
+                            </div>
+
+                            <button id="show-more">Show More</button>
                             </div>
                         </div>
                     </div>
