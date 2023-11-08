@@ -28,12 +28,16 @@
 	Router::connect('/profile', array('controller'=> 'Users', 'action' => 'profile'));
 	Router::connect('/update-profile', array('controller'=> 'Users', 'action' => 'updateProfile'));
 	Router::connect('/acccount-settings', array('controller'=> 'Users', 'action' => 'accountSettings'));
-
 	Router::connect('/thank-you-page', array('controller'=> 'Main', 'action' => 'thankYouPage'));
 
 	// MESSAGES
 	Router::connect('/create-new-message', array('controller'=> 'Messages', 'action' => 'createMessage'));
-
+	Router::connect('/messages/view/:id/:message_key', array('controller'=> 'Messages', 'action' => 'viewMessage'));
+	Router::connect('/reply-message', array('controller'=> 'Messages', 'action' => 'replyMessage'));
+	Router::connect('/get-more-messages/:page', array('controller' => 'messages', 'action' => 'getMessagesMore'), array('pass' => array('page'), 'page' => '[0-9]+'));
+	Router::connect('/get-message-paginate', array('controller' => 'Messages', 'action' => 'viewMessageDetailsPaginate'));
+	Router::connect('/delete-message', array('controller' => 'Messages', 'action' => 'deleteMessage'));
+	Router::connect('/delete-messages', array('controller' => 'Messages', 'action' => 'deleteMessages'));
 	// MY API END POINT
 	Router::connect('/users/search/:data_string', array('controller'=> 'Users', 'action' => 'getSearchUsers'));
 	Router::connect('/users/search/', array('controller'=> 'Users', 'action' => 'getSearchUsers'));

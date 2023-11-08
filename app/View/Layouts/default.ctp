@@ -55,9 +55,9 @@ $cakeDescription = __d('cake_dev', 'MessageBoard App');
 				<li class="nav-item d-flex justify-content-center align-items-center mx-2 px-2 border-left border-right border-dark">
 					<figure class="nav-img">
 					<?php if($current_user['profile_image'] != NULL): ?>
-					<img src="<?php echo 'uploads/user_'.$current_user['id'].DS.$current_user['profile_image']; ?>" alt="profile thumb" class="img-thumbnail p-0">
+					<img src="<?php echo Router::url('/'); ?>/<?php echo 'uploads/user_'.$current_user['id'].DS.$current_user['profile_image']; ?>" alt="profile thumb" class="img-thumbnail p-0">
 					<?php else: ?>
-					<img src="img/profile-dummy.png" alt="Profile Picture" class="img-thumbnail p-0" />
+					<img src="<?php echo Router::url('/'); ?>/img/profile-dummy.png" alt="Profile Picture" class="img-thumbnail p-0" />
 					<?php endif; ?>
 					</figure>
 					<?php echo $this->Custom->activeLink(AuthComponent::user("name"),'Users','profile'); ?>
