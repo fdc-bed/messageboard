@@ -71,7 +71,9 @@ $cakeDescription = __d('cake_dev', 'MessageBoard App');
         </div>
 		<?php  } ?>
     </nav>	
-	<?php echo $this->fetch('content'); ?>
+	<div class="wrapper">
+		<?php echo $this->fetch('content'); ?>
+	</div>
 
 	<?php echo $this->element('sql_dump'); ?>
 	<!-- Footer -->

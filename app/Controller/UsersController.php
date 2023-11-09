@@ -18,6 +18,7 @@ class UsersController extends AppController{
         $current_user = AuthComponent::user();	
     }
 
+	// USER REGISTER
 	public function register() {
 		$this->Session->destroy();
 		if ($this->request->is('post')) {
@@ -52,24 +53,24 @@ class UsersController extends AppController{
 				$this->User->id = $this->Auth->user('id');
 				$this->User->saveField('last_login_datetime', date('Y-m-d H:i:s'));
 				// $authUser = $this->User->findById($this->Auth->user('id'));
-				// $this->Auth->login($authUser);
 				return $this->redirect($this->Auth->redirectUrl());
 			}
-
 				$this->Flash->error(__('Invalid username or password, try again!'));
 		}
 	}
 	
-	//USER LOGOUT
+	// LOGOUT USER
 	public function logout() {
 		return $this->redirect($this->Auth->logout());
 	}
 
+	// USER PROFILE
 	public  function profile(){
 		$userData = $this->User->getProfileData()['User'];
 		$this->set('userData', $userData); 
 	}
 
+	// UPDATE USER PROFILE
 	public  function updateProfile(){
 		$this->loadModel('Users');
 		$errors = null;
@@ -106,13 +107,11 @@ class UsersController extends AppController{
 				$validationErrors = $this->User->validationErrors;
 				$this->set('validationErrors', $validationErrors);
 			}
-
-
 		}
 
 	}
 
-	//USER UPLOAD PROFILE PHOTO
+	// UPLOAD FUNCTION
 	public function doUploadProfile($imageFile) {
 		$result = array();
 		$allowExtension = array('gif', 'jpeg', 'png', 'jpg');
@@ -151,13 +150,51 @@ class UsersController extends AppController{
 		return $result;
 	}
 
+	// UPDATE ACCOUNT EMAIL AND PASSWORD
 	public  function accountSettings(){
+		$this->loadModel('Users');
+		$userData = $this->User->getProfileData()['User'];
+		$post_data =$this->request->data;
 
+		// pass data to view
+		$this->set('userData', $userData); 
+		$this->set('postData',$post_data);
+
+		if (isset($this->request->data) && $this->request->data) {
+
+			// IF EMAIL IS SAME
+			if ($post_data["email"] == $this->Auth->user('email')){
+				unset($post_data["email"]);
+			}
+		$this->User->set($post_data);
+		if($this->User->validates()){
+
+			if (isset($post_data["password"])){
+				$post_data["password"] = AuthComponent::password($post_data["password"]);
+			}
+
+			// READ DATA FROM DATABASE
+			$this->Users->read(null, $this->Auth->user('id'));
+			$this->Users->set($post_data);
+			// SAVE UPDATED DATA
+			$this->Users->save();
+
+			// AUTH LOGIN
+			$authUser = $this->User->findById($this->Auth->user('id'))["User"];
+			$this->Auth->login($authUser);
+			$this->Session->setFlash('Updated account successfully!');
+
+			return $this->redirect(array('controller' => 'Users', 'action' => 'accountSettings'));
+		}else{
+			$validationErrors = $this->User->validationErrors;
+			$this->set('validationErrors', $validationErrors);
+		}
+	}
 
 	}
 
-
-	// END POINT
+	// ===> FOR AJAX END POINT <===//
+	// SEARCH USERS TO MESSAGE - FOR END POINT
 	public function getSearchUsers() {
 		if (isset($this->request->params['data_string'])) {
 			$dataString = $this->request->params['data_string'];
@@ -170,6 +207,7 @@ class UsersController extends AppController{
 		$this->set('_serialize', 'jsonData');
     }
 
+	// GET USER - FOR END POINT
 	public function getUserData() {
 		if (isset($this->request->params['data_id'])) {
 			$dataID = $this->request->params['data_id'];
@@ -181,8 +219,6 @@ class UsersController extends AppController{
 		$this->viewClass = 'Json';
 		$this->set('_serialize', 'jsonData');
     }
-
-
 }
 
 ?>

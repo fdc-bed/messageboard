@@ -1,8 +1,6 @@
 <?php
-
 App::uses('AppController', 'Controller');
 App::uses('User', 'AppModel');
-
 
 class MessagesController extends AppController{
 
@@ -16,26 +14,27 @@ class MessagesController extends AppController{
 	public $components = array('RequestHandler','Flash', 'Session');
 
 	// REQUEST CONSTRUCTOR
-	public function __construct($request = null, $response = null)
-	{
+	public function __construct($request = null, $response = null){
 		parent::__construct($request, $response);
 	}
 
 	// MESSAGE INDEX
     public function index(){
-
 		$messagesList = $this->Message->getAllMessagesQuery();
 		$this->set("messages", $messagesList);
     }
 
+	// GET ALL MESSAGES WITH SEE MORE FUNCTION
 	public function getMessagesMore(){
 		$page = $this->request->params['page'];
 		$messagesList = $this->Message->getAllMessages(10,$page);
-		debug($messagesList);
-		$this->render('/Layouts/ajax');
+		$hasMore = count($messagesList) >= 10;
+		$this->autoRender = false;
+		echo json_encode([
+			'hasMore' => $hasMore,
+			'messages' => $messagesList
+		]);
     }
-
-
 
 	// CREATE NEW MESSATE
 	public function createMessage() {
@@ -64,9 +63,8 @@ class MessagesController extends AppController{
 	public function replyMessage() {
 		if(isset($this->request->data)&& $this->request->data){
 			$replyContent = $this->request->data;
-			// debug($replyContent);
 			$getRecipientData = $this->User->getUserData($replyContent['to_id']);
-
+			
 			if($getRecipientData == null){
 				echo '
 					<div class="msg-txt error-msg">
@@ -84,9 +82,7 @@ class MessagesController extends AppController{
 	public function viewMessageDetailsPaginate() {
 		if (isset($this->request->data) && $this->request->data) {
 			$dataReq = $this->request->data;
-		$get_profileimg = $this->User->getUserData($dataReq['recipient'])[0]["User"];
-		// debug($getRecipientData);
-
+			$get_profileimg = $this->User->getUserData($dataReq['recipient'])[0]["User"];
 			$response = $this->Message->viewMessageDetailsPaginate($dataReq,$get_profileimg);
 			echo $response;
 			$this->render('/Layouts/ajax');
@@ -97,20 +93,18 @@ class MessagesController extends AppController{
 	public function deleteMessage() {
 		if (isset($this->request->data) && $this->request->data) {
 			$msgid = $this->request->data("msgid");
-			// debug($msgid);
 			$response = $this->MessageStatus->deleteSingleMessageStatus($msgid);
 		}
 		$this->render('/Layouts/ajax');
 	}
-		// DELETE CONVERSATION
-		public function deleteMessages() {
-			if (isset($this->request->data) && $this->request->data) {
-				$message_key = $this->request->data("message_key");
-				$response = $this->MessageStatus->deleteConvoMessage($message_key);
-			}
-			$this->render('/Layouts/ajax');
+	
+	// DELETE CONVERSATION
+	public function deleteMessages() {
+		if (isset($this->request->data) && $this->request->data) {
+			$message_key = $this->request->data("message_key");
+			$response = $this->MessageStatus->deleteConvoMessage($message_key);
 		}
-
+		$this->render('/Layouts/ajax');
+	}
 }
-
 ?>

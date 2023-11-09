@@ -41,7 +41,12 @@
                                     </div>
                                 <?php endforeach; ?>
                             </div>
-                            <button id="show-more">Show More</button>
+                            <?php
+                            if (count($messages) >= 10) { ?>
+                            <div class="btn-cont text-center pt-3">
+                                <button id="show-more" class="btn btn-info mx-auto">Show More</button>
+                            </div>
+                            <?php } ?>
                             </div>
                         </div>
                     </div>

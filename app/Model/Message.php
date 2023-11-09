@@ -158,6 +158,12 @@ class Message extends AppModel {
 
 		$counter = 0;
 		foreach ($messages as $message) {
+			$btnShowMore = "";
+			if(strlen($message['msg']['content']) >= 50){
+				$btnShowMore = '<span id="delete-msg" data-msgid="'.$message['msg']["id"].'"><i class="fa fa-trash"></i></span><a class="text-decoration-underline" onClick="showMoreMsg(this, `'.htmlspecialchars($message['msg']['content']).'`,'.$message['msg']["id"].')">(see more)</a>';
+			}else{
+				$btnShowMore = '<span id="delete-msg" data-msgid="'.$message['msg']["id"].'"><i class="fa fa-trash"></i></span>';
+			}
 			if ( count($messages) > 11) {
 				if($counter > 0 && $counter <= 11){
 					$msg = $message["msg"];
@@ -167,7 +173,7 @@ class Message extends AppModel {
 								<figure>
 								<img src="'.Router::url('/').DS.'uploads/user_'.$msg['from_id'].DS.'" alt="profile image"">
 								</figure>
-								<p>'.$msg["content"].'<span id="delete-msg" data-msgid="'.$msg["id"].'"><i class="fa fa-trash"></i></span></p>
+								<p>'.mb_strimwidth($msg['content'], 0, 50, "...").$btnShowMore.'</p>
 								<span class="message_time">'.$this->datetimeFormatMessage($msg['created_date']).'</span>
 							</div>
 						';
@@ -177,7 +183,7 @@ class Message extends AppModel {
 							<figure>
 							<img src="'.Router::url('/').DS.'uploads/user_'.$this->userId.DS.$this->profileImage.'" alt="profile image">
 							</figure>
-								<p><span id="delete-msg" data-msgid="'.$msg["id"].'"><i class="fa fa-trash"></i></span>'.$msg["content"].'</p>
+								<p>'.mb_strimwidth($msg['content'], 0, 50, "...").$btnShowMore.'</p>
 								<span class="message_time">'.$this->datetimeFormatMessage($msg['created_date']).'</span>
 							</div>
 						';
@@ -191,7 +197,7 @@ class Message extends AppModel {
 							<figure>
 							<img src="'.Router::url('/').'uploads/user_'.$msg['from_id'].DS.$get_profileimg['profile_image'].'" alt="profile image">
 							</figure>
-							<p>'.$msg["content"].'<span id="delete-msg" data-msgid="'.$msg["id"].'"><i class="fa fa-trash"></i></span></p>
+							<p>'.mb_strimwidth($msg['content'], 0, 50, "...").$btnShowMore.'</p>
 							<span class="message_time">'.$this->datetimeFormatMessage($msg['created_date']).'</span>
 						</div>
 					';
@@ -201,7 +207,7 @@ class Message extends AppModel {
 							<figure>
 							<img src="'.Router::url('/').DS.'uploads/user_'.$this->userId.DS.$this->profileImage.'" alt="profile image">
 							</figure>
-							<p><span id="delete-msg" data-msgid="'.$msg["id"].'"><i class="fa fa-trash"></i></span>'.$msg["content"].'</p>
+							<p>'.mb_strimwidth($msg['content'], 0, 50, "...").$btnShowMore.'</p>
 							<span class="message_time">'.$this->datetimeFormatMessage($msg['created_date']).'</span>
 						</div>
 					';
@@ -217,6 +223,7 @@ class Message extends AppModel {
 			$output .= '<button class="btn btn-info mx-auto" id="see-older-msg" data-msgid="'.$lastMsgIdButton.'">See older message</button>';
 		}
 		// returbn ajax //
+	
 		return $output;
 	}
 

@@ -30142,3 +30142,201 @@ Stack Trace:
 #6 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
 #7 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #8 {main}
+2023-11-09 10:04:10 Error: [ParseError] syntax error, unexpected 'messages' (T_STRING), expecting ';' or ','
+Request URL: /messageboard/messages
+Stack Trace:
+#0 [internal function]: App::load('MessagesControl...')
+#1 [internal function]: spl_autoload_call('MessagesControl...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(266): class_exists('MessagesControl...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2023-11-09 13:33:13 Error: [ParseError] syntax error, unexpected '}'
+Request URL: /messageboard/messages/view/6/68
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/View/View.php(933): View->_evaluate('/Applications/X...', Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/View/View.php(473): View->_render('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#3 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#4 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#5 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2023-11-09 13:42:57 Error: [ParseError] syntax error, unexpected '}'
+Request URL: /messageboard/messages/view/6/68
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/View/View.php(933): View->_evaluate('/Applications/X...', Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/View/View.php(473): View->_render('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#3 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#4 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#5 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2023-11-09 13:49:12 Error: [ParseError] syntax error, unexpected 'endforeach' (T_ENDFOREACH)
+Request URL: /messageboard/messages/view/6/68
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/View/View.php(933): View->_evaluate('/Applications/X...', Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/View/View.php(473): View->_render('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#3 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#4 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#5 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2023-11-09 16:52:13 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND (messages.from_id =  OR messages.to_id = )
+				)
+				select *
+					from u...' at line 4
+Request URL: /messageboard/messages
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(502): PDOStatement->execute(Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(468): DboSource->_execute('with messages a...', Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(715): DboSource->execute('with messages a...', Array, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(641): DboSource->fetchAll('with messages a...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(3489): DboSource->query('with messages a...', false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Model/Message.php(82): Model->query('with messages a...')
+#6 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Controller/MessagesController.php(23): Message->getAllMessagesQuery()
+#7 [internal function]: MessagesController->index()
+#8 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#11 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2023-11-09 16:52:14 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND (messages.from_id =  OR messages.to_id = )
+				)
+				select *
+					from u...' at line 4
+Request URL: /messageboard/messages
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(502): PDOStatement->execute(Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(468): DboSource->_execute('with messages a...', Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(715): DboSource->execute('with messages a...', Array, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(641): DboSource->fetchAll('with messages a...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(3489): DboSource->query('with messages a...', false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Model/Message.php(82): Model->query('with messages a...')
+#6 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Controller/MessagesController.php(23): Message->getAllMessagesQuery()
+#7 [internal function]: MessagesController->index()
+#8 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#11 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2023-11-09 16:52:17 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND (messages.from_id =  OR messages.to_id = )
+				)
+				select *
+					from u...' at line 4
+Request URL: /messageboard/messages
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(502): PDOStatement->execute(Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(468): DboSource->_execute('with messages a...', Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(715): DboSource->execute('with messages a...', Array, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(641): DboSource->fetchAll('with messages a...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(3489): DboSource->query('with messages a...', false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Model/Message.php(82): Model->query('with messages a...')
+#6 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Controller/MessagesController.php(23): Message->getAllMessagesQuery()
+#7 [internal function]: MessagesController->index()
+#8 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#11 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2023-11-09 16:56:03 Error: [ParseError] syntax error, unexpected 'debug' (T_STRING)
+Request URL: /messageboard/acccount-settings
+Stack Trace:
+#0 [internal function]: App::load('UsersController')
+#1 [internal function]: spl_autoload_call('UsersController')
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(266): class_exists('UsersController')
+#3 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2023-11-09 17:04:00 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND (messages.from_id =  OR messages.to_id = )
+				)
+				select *
+					from u...' at line 4
+Request URL: /messageboard/messages
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(502): PDOStatement->execute(Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(468): DboSource->_execute('with messages a...', Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(715): DboSource->execute('with messages a...', Array, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(641): DboSource->fetchAll('with messages a...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(3489): DboSource->query('with messages a...', false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Model/Message.php(82): Model->query('with messages a...')
+#6 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Controller/MessagesController.php(23): Message->getAllMessagesQuery()
+#7 [internal function]: MessagesController->index()
+#8 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#11 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2023-11-09 17:04:02 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND (messages.from_id =  OR messages.to_id = )
+				)
+				select *
+					from u...' at line 4
+Request URL: /messageboard/messages
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(502): PDOStatement->execute(Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(468): DboSource->_execute('with messages a...', Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(715): DboSource->execute('with messages a...', Array, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(641): DboSource->fetchAll('with messages a...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(3489): DboSource->query('with messages a...', false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Model/Message.php(82): Model->query('with messages a...')
+#6 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Controller/MessagesController.php(23): Message->getAllMessagesQuery()
+#7 [internal function]: MessagesController->index()
+#8 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#11 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2023-11-09 17:04:03 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND (messages.from_id =  OR messages.to_id = )
+				)
+				select *
+					from u...' at line 4
+Request URL: /messageboard/messages
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(502): PDOStatement->execute(Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(468): DboSource->_execute('with messages a...', Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(715): DboSource->execute('with messages a...', Array, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(641): DboSource->fetchAll('with messages a...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(3489): DboSource->query('with messages a...', false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Model/Message.php(82): Model->query('with messages a...')
+#6 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Controller/MessagesController.php(23): Message->getAllMessagesQuery()
+#7 [internal function]: MessagesController->index()
+#8 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#11 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2023-11-09 17:07:43 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'name' doesn't have a default value
+Request URL: /messageboard/acccount-settings
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(502): PDOStatement->execute(Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(468): DboSource->_execute('INSERT INTO `me...', Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(1132): DboSource->execute('INSERT INTO `me...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(1942): DboSource->create(Object(AppModel), Array, Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(1760): Model->_doSave(NULL, Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Controller/UsersController.php(175): Model->save()
+#6 [internal function]: UsersController->accountSettings()
+#7 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#10 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2023-11-09 17:11:15 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND (messages.from_id =  OR messages.to_id = )
+				)
+				select *
+					from u...' at line 4
+Request URL: /messageboard/messages
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(502): PDOStatement->execute(Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(468): DboSource->_execute('with messages a...', Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(715): DboSource->execute('with messages a...', Array, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Datasource/DboSource.php(641): DboSource->fetchAll('with messages a...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Model/Model.php(3489): DboSource->query('with messages a...', false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Model/Message.php(82): Model->query('with messages a...')
+#6 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Controller/MessagesController.php(23): Message->getAllMessagesQuery()
+#7 [internal function]: MessagesController->index()
+#8 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#11 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}

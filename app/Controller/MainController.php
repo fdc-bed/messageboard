@@ -18,11 +18,11 @@ class MainController extends AppController{
     }
 
     public function index(){
-        
+        // index
     }
 
     public function thankYouPage(){
-
+        // index
     }
 }
 

@@ -69,32 +69,6 @@ $(document).ready(function () {
 
     });
 
-    // SEE MORE MESSAGE
-    $(document).ready(function(){
-        $(document).on('click', '#show-more', function(){
-            var lastMsg = $(this).data("msg");
-            var recipient = document.getElementById("searchMessage").value;
-
-            $("#show-more").html("Loading...");
-            $.ajax({
-                url: base_url+"get-messages",
-                method: "POST",
-                data: {lastMsgId: lastMsg, recipientName: recipient},
-                dataType: "text",
-                success: function(data){
-                    var resData = data;
-                    if (resData != '') {
-                        $('#show-more').remove();
-                        $('.messages-con').append(resData);
-                    } else {
-                        $("#show-more").html("No message available");
-                    }
-                }
-            });
-        });
-
-    });
-
 
     // SEE OLDER MESSAGES DETAILS
     $(document).ready(function(){
@@ -126,7 +100,7 @@ $(document).ready(function () {
     $(document).ready(function(){
         $(document).on('click', '#delete-msg', function(e){
             var msgToDelete = $(this).data("msgid");
-            // console.log(msgToDelete);
+
             $.ajax({
                 url: base_url+"delete-message",
                 method: "POST",
@@ -181,22 +155,56 @@ $(document).ready(function () {
         $(document).ready(function () {
             var page = 2; // Initial page (e.g., page 2, since you have the first page already)
             var loading = false; // Track whether a request is in progress
+            var showMoreButton = $('#show-more');
         
             $('#show-more').click(function () {
                 if (loading) return; // Prevent multiple requests
         
                 loading = true;
-                $('#show-more').text('Loading...');
+                // $('#show-more').text('Loading...');
+                showMoreButton.text('Loading...');
         
                 $.ajax({
                     url: base_url+'get-more-messages/' + page, // Adjust the URL to match your CakePHP action
                     method: 'GET',
                     dataType: 'html',
                     success: function (data) {
-                        $('#message-list').append(data);
+                        var resData = JSON.parse(data);
+                        var msgHtml = [];
+        
+                        if(!resData.hasMore){
+                            showMoreButton.hide();
+                        }
+                        resData.messages.map(row => {
+   
+                            var isCurrentUser = (row.messages.to_id === row.users.id) ? '(You)' : '';
+                            msgHtml.push(`
+                            <div class="row" id="${row.messages.message_key}">
+                            <div class="col-md-3 d-flex justify-content-start align-items-center">
+                                <figure class="m-0">
+                                <img style="width:40px" onerror="this.onerror=null;this.src='${base_url}/img/profile-dummy.png';" src="uploads/user_${row.users.id}/${row.users.profile_image}" alt="Profile Image">
+                                </figure>
+                                <div class="user_name pl-3 font-weight-bold">
+                                ${row.users.name}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                            <p class="ellipsis mb-0">${row.messages.content} ${isCurrentUser}</p>
+                            <span class="message_time font-italic">${row.messages.created_date}</span>
+                        </div>
+                        <div class="col-md-3 d-flex justify-content-end align-items-center">
+                            <a href="messages/view/${row.users.id}/${row.messages.message_key}" class="btn btn-sm btn-success"><i class="fa fa-envelope"> View Message</i></a>
+                            <a href="javascript:;" class="btn btn-sm btn-danger ml-2" id="delete-msg-convo" data-message_key="${row.messages.message_key}"><i class="fa fa-trash"></i></a>
+                        </div>
+                        </div>
+                            `)
+                        })
+            
+                        $('#message-list').append(msgHtml.join(''));
                         loading = false;
                         $('#show-more').text('Show More');
                         page++;
+                        
                     }
                 });
             });
