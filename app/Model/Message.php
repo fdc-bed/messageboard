@@ -6,6 +6,15 @@ class Message extends AppModel {
     public $userTable = "messages";
     public $userId;
 
+	public $actsAs = array('Containable');
+
+    public $belongsTo = array(
+        'User' => array(
+            'className' => 'User',
+            'foreignKey' => 'from_id',
+        ),
+    );
+
     public function __construct(){
         parent::__construct();
 		$this->userId = AuthComponent::user('id');
@@ -42,8 +51,9 @@ class Message extends AppModel {
     }
 
 	// GET ALL INIT MESSAGES
-    public function getAllMessages($limit = 10, $page = 1){
-		$offset = $limit * $page;
+    public function getAllMessages($limit, $page){
+		// $offset = $limit * $page;
+		$offset = ($page - 1) * $limit;
 		$messagesList = $this->query(
 			"with messages as (
 				select messages.id, messages.content, messages.from_id, messages.message_key, messages.created_date, messages.to_id,
@@ -54,9 +64,27 @@ class Message extends AppModel {
 				from users RIGHT JOIN messages ON users.id = messages.from_id OR users.id = messages.to_id WHERE users.id != $this->userId GROUP BY message_key ORDER BY messages.id DESC LIMIT $limit OFFSET $offset
 			"
 		);
+
+
+
 		return $messagesList;
     }
 
+		// GET ALL INIT MESSAGES
+		public function getAllMessagesQuery(){
+			$messagesList = $this->query(
+				"with messages as (
+					select messages.id, messages.content, messages.from_id, messages.message_key, messages.created_date, messages.to_id,
+						   row_number() over(partition by messages.message_key order by messages.id desc) as RowNum
+						from messages LEFT JOIN message_status ON message_status.message_id = messages.id WHERE message_status.user_id = $this->userId AND (messages.from_id = $this->userId OR messages.to_id = $this->userId)
+				)
+				select *
+					from users RIGHT JOIN messages ON users.id = messages.from_id OR users.id = messages.to_id WHERE users.id != $this->userId GROUP BY message_key ORDER BY messages.id DESC LIMIT 10
+				"
+			);
+			return $messagesList;
+		}
+	
 	// VIEW MESSAGE FROM SENDER AND RECIEVER
     public function viewMessageDetails($recipient, $message_key) {
 

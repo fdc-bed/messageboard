@@ -24,18 +24,18 @@ class MessagesController extends AppController{
 	// MESSAGE INDEX
     public function index(){
 
-		$messagesList = $this->Message->getAllMessages();
+		$messagesList = $this->Message->getAllMessagesQuery();
 		$this->set("messages", $messagesList);
     }
 
-	public function getMessagesMore($page = 1){
-
-		$messagesList = $this->Message->getAllMessages(1,$page);
+	public function getMessagesMore(){
+		$page = $this->request->params['page'];
+		$messagesList = $this->Message->getAllMessages(10,$page);
 		debug($messagesList);
-		// $this->set("messages", $messagesList);
-		// debug($messagesList);
 		$this->render('/Layouts/ajax');
     }
+
+
 
 	// CREATE NEW MESSATE
 	public function createMessage() {

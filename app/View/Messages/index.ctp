@@ -6,7 +6,6 @@
 
                 <div class="card-title text-primary m-0">Messages <i class="fa fa-bubble"></i></div>
                 <div class="col-md-3 px-0 text-right">
-                    <!-- <a href="javascript:;" id="newMessagebtn" class="btn btn-primary">Create New Message</a> -->
                     <a href="create-new-message" class="btn btn-primary">Create New Message</a>
                 </div>
             </div>
@@ -18,11 +17,30 @@
                         
                             <div id="message-list">
                                 <?php foreach ($messages as $msg): ?>
-                                    <!-- Your message display code goes here -->
-                                    <?php //$msgp['messages']['content']; ?>
+                                    <div class="row" id="<?php echo $msg['messages']['message_key']; ?>">
+                                        <div class="col-md-3 d-flex justify-content-start align-items-center">
+                                            <figure class="m-0">
+                                                <?php if($msg['users']['profile_image']!=NULL){ ?>
+                                                <img style="width:40px" src="uploads/user_<?php echo $msg['users']['id'].DS.$msg['users']['profile_image'];?>" alt="Profile Image">
+                                                <?php }else{ ?>
+                                                <img style="width:40px" src="img/profile-dummy.png" alt="Profile Image">
+                                                <?php } ?>
+                                            </figure>
+                                            <div class="user_name pl-3 font-weight-bold">
+                                            <?= $msg['users']['name']; ?>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                        <p class="ellipsis mb-0"><?= $msg['messages']['content'] ;?><?php if($msg['messages']['to_id']==$msg['users']['id']): echo '(You)'; endif; ?></p>
+                                        <span class="message_time font-italic"><?= $this->Custom->datetimeFormatMessage($msg['messages']['created_date']); ?></span>
+                                    </div>
+                                    <div class="col-md-3 d-flex justify-content-end align-items-center">
+                                        <a href="messages/view/<?php echo $msg['users']['id']; ?>/<?php echo $msg['messages']['message_key']; ?>" class="btn btn-sm btn-success"><i class="fa fa-envelope"> View Message</i></a>
+                                        <a href="javascript:;" class="btn btn-sm btn-danger ml-2" id="delete-msg-convo" data-message_key="<?php echo $msg['messages']['message_key']; ?>"><i class="fa fa-trash"></i></a>
+                                    </div>
+                                    </div>
                                 <?php endforeach; ?>
                             </div>
-
                             <button id="show-more">Show More</button>
                             </div>
                         </div>
@@ -33,39 +51,3 @@
     </div>
 </div>
 <?php echo $this->Session->flash(); ?>
-<!-- <div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Compose Message</h5>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <form id="messageForm" method="POST" action="">
-            <div class="modal-body">
- 
-                <div class="form-group">
-                    <label for="recipient">Recipient:</label>
-                    <select class="form-control" id="searchRecipient" name="toId[]" multiple="multiple" required>
-                        <?php
-                            // foreach ($getUsers as $user) {
-                            //     $user_img = ($user["User"]["profile_image"] == NULL) ? 'profile-dummy.png' : $user["User"]["profile_image"];
-                            //     echo '<option value="' . $user["User"]["id"] . '" data-image="' . $user["User"]["profile_image"] . '">' . $user["User"]["name"] . '</option>';
-                            // }
-                        ?>
-                        
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea class="form-control" id="message" rows="4" name="content" placeholder="Enter your message" required></textarea>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </div>
-            </form>
-        </div>
-    </div>
-</div> -->
-
