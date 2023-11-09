@@ -82,6 +82,7 @@ class User extends AppModel{
         $this->userId = $this->userID;
     }
 
+	// FUNCTION FOR MATCH PASSWORD
 	public function matchPasswords($data) {
 		if ($this->data[$this->alias]['password'] == $this->data[$this->alias]['confirm_password']) {
 			return true;
@@ -89,6 +90,7 @@ class User extends AppModel{
 		return false;
 	}
 
+	// FUNCTION FOR UNDER AGE
 	public function isUnderAge($value, $minAge) {
 		$today = new DateTime();
 		$birthdate = new DateTime($value['birthdate']);
@@ -105,7 +107,7 @@ class User extends AppModel{
 		return true;
 	}
 	
-
+	// GET PROFILE DATA
 	public function getProfileData(){
 		$userData = $this->find('first', array(
 			'conditions' => array(
@@ -116,8 +118,8 @@ class User extends AppModel{
 		return $userData;
 	}
 
+	// GET TO SEND USER
 	public function getUsersToSendMessage() {
-		// debug($this->request->params);
 		$usersList = $this->find('all', array(
 			'conditions' => array(
 				'id !=' => $this->userID
@@ -126,7 +128,7 @@ class User extends AppModel{
 		return $usersList;
 	}
 
-	// Search Model 
+	// SEARCH MODEL
 	public function searchUsers($search_string = NULL) {
 		// debug($this->request->params);
 		$usersList = $this->find('all', array(
@@ -139,6 +141,7 @@ class User extends AppModel{
 		return $usersList;
 	}
 
+	// GET USER DATA
 	public function getUserData($data_id = NULL) {
 		$get_user = $this->find('all', array(
 			'fields' => array('id', 'name', 'profile_image'),
@@ -148,7 +151,5 @@ class User extends AppModel{
 		));
 		return $get_user;
 	}
-
-
 }
 ?>

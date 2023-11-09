@@ -1,6 +1,7 @@
 <?php
 App::uses('AppController', 'Controller');
 App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
+use Cake\Http\ServerRequest;
 
 class UsersController extends AppController{
     public $name = 'Users';
@@ -156,6 +157,7 @@ class UsersController extends AppController{
 		$userData = $this->User->getProfileData()['User'];
 		$post_data =$this->request->data;
 
+
 		// pass data to view
 		$this->set('userData', $userData); 
 		$this->set('postData',$post_data);
@@ -219,6 +221,16 @@ class UsersController extends AppController{
 		$this->viewClass = 'Json';
 		$this->set('_serialize', 'jsonData');
     }
+
+	// GET IP ADDRESS 
+	public function getIpAddress() {
+    // Get the client's IP address
+    $ipAddress = $this->request->clientIp();
+
+    // Output the IP address
+    echo "Client IP Address: " . $ipAddress;
+	}
 }
+
 
 ?>

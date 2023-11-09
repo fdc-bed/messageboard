@@ -30483,3 +30483,52 @@ Stack Trace:
 #1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
 #2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2023-11-09 18:04:25 Error: [ParseError] syntax error, unexpected 'public' (T_PUBLIC), expecting end of file
+Request URL: /messageboard/acccount-settings
+Stack Trace:
+#0 [internal function]: App::load('UsersController')
+#1 [internal function]: spl_autoload_call('UsersController')
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(266): class_exists('UsersController')
+#3 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2023-11-09 18:04:52 Error: [Error] Class 'ServerRequest' not found
+Request URL: /messageboard/acccount-settings
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Controller/UsersController.php(159): UsersController->getIpAddress()
+#1 [internal function]: UsersController->accountSettings()
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#5 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2023-11-09 18:05:09 Error: [Error] Class 'Cake\Http\ServerRequest' not found
+Request URL: /messageboard/acccount-settings
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Controller/UsersController.php(160): UsersController->getIpAddress()
+#1 [internal function]: UsersController->accountSettings()
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#5 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2023-11-09 18:05:17 Error: [Error] Class 'Cake\Http\ServerRequest' not found
+Request URL: /messageboard/acccount-settings
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Controller/UsersController.php(160): UsersController->getIpAddress()
+#1 [internal function]: UsersController->accountSettings()
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#5 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2023-11-09 18:12:44 Error: [MissingControllerException] Controller class UploadsController could not be found.
+Exception Attributes: array (
+  'class' => 'UploadsController',
+  'plugin' => NULL,
+)
+Request URL: /messageboard//uploads/user_16/
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
