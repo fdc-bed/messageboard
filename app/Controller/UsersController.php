@@ -65,13 +65,13 @@ class UsersController extends AppController{
 	}
 
 	// USER PROFILE
-	public  function profile(){
+	public function profile(){
 		$userData = $this->User->getProfileData()['User'];
 		$this->set('userData', $userData); 
 	}
 
 	// UPDATE USER PROFILE
-	public  function updateProfile(){
+	public function updateProfile(){
 		$this->loadModel('Users');
 		$errors = null;
 		if(isset($this->request->data) && $this->request->data){

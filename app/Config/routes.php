@@ -26,7 +26,7 @@
 	Router::connect('/register', array('controller' => 'Users', 'action' => 'register'));
 	Router::connect('/logout', array('controller'=> 'Users', 'action' => 'logout'));
 	Router::connect('/profile', array('controller'=> 'Users', 'action' => 'profile'));
-	Router::connect('/update-profile', array('controller'=> 'Users', 'action' => 'accountSettings'));
+	Router::connect('/update-profile', array('controller'=> 'Users', 'action' => 'updateProfile'));
 	Router::connect('/acccount-settings', array('controller'=> 'Users', 'action' => 'accountSettings'));
 	Router::connect('/thank-you-page', array('controller'=> 'Main', 'action' => 'thankYouPage'));
 

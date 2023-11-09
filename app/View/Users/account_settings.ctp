@@ -12,33 +12,31 @@
                     <p>Update your account settings here. You can change your email address and update your password. To confirm the new password, please enter it twice in the fields below.</p>
                     <!-- VALIDATTION -->
                     <?php if ($this->Session->check('Message.flash')) { ?>
-                    <div class="error-messages mx-auto ">
-                        <div class="alert alert-success text-sm alert-dismissible fade show mb-2" role="alert">
-                            <?php echo $this->Session->flash('flash'); ?>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <   span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    </div>
-                    <?php } ?> 
+                <div class="error-messages mx-auto ">
+                <div class="alert alert-success text-sm alert-dismissible fade show mb-2" role="alert">
+                <?php echo $this->Session->flash('flash'); ?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                </div>
+                <?php } ?> 
             
-                    <?php if (!empty($validationErrors)): ?>
-                    <div class="error-messages mx-auto ">
+            <?php if (!empty($validationErrors)): ?>
+            <div class="error-messages mx-auto ">
                     <?php foreach ($validationErrors as $field => $errors): ?>
-                            <?php foreach ($errors as $error): ?>
-                                <div class="alert alert-danger text-sm alert-dismissible fade show mb-2" role="alert">
-                                    <?= $error ?>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                </div>
-                            <?php endforeach; ?>
+                        <?php foreach ($errors as $error): ?>
+                        <div class="alert alert-danger text-sm alert-dismissible fade show mb-2" role="alert">
+                        <?= $error ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <?php endforeach; ?>
                     <?php endforeach; ?>
-                    </div>
-                    <?php endif; ?>
-                    <!-- END VALIDATION -->
-
-                    <!-- ACCOUNT SETTING FORM -->
+            </div>
+        <?php endif; ?>
+        <!--  -->
                     <form action="" method="post">
                     <div class="form-group">
                     <label for="UserEmail">Email:</label>
@@ -64,7 +62,6 @@
                     </div>
                     <button type="submit" class="btn btn-success">Update Account</button>
                     </form>
-                    <!-- ENDACCOUNT SETTING FORM -->Q
                 </div>
             </div>
         </div>

@@ -16,6 +16,11 @@
                             <div class="message_content p-2">
                         
                             <div id="message-list">
+                                <?php if(empty($messages)): ?>
+                                    <div class="no-data">
+                                        <p class="text-center pt-2">No Messages</p>
+                                    </div>
+                                <?php endif; ?>
                                 <?php foreach ($messages as $msg): ?>
                                     <div class="row" id="<?php echo $msg['messages']['message_key']; ?>">
                                         <div class="col-md-3 d-flex justify-content-start align-items-center">

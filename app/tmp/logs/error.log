@@ -30340,3 +30340,146 @@ Stack Trace:
 #10 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
 #11 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #12 {main}
+2023-11-09 17:46:00 Error: [MissingActionException] Action UsersController::uploads() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'uploads',
+)
+Request URL: /messageboard/Users/uploads/user_6/1699262720-1449604645-cf3aa769d2fce71f55e5ffbf585740ce.jpg
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-11-09 17:46:07 Error: [MissingActionException] Action UsersController::uploads() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'uploads',
+)
+Request URL: /messageboard/Users/uploads/user_6/1699262720-1449604645-cf3aa769d2fce71f55e5ffbf585740ce.jpg
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-11-09 17:46:20 Error: [MissingActionException] Action UsersController::uploads() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'uploads',
+)
+Request URL: /messageboard/Users/uploads/user_6/1699262720-1449604645-cf3aa769d2fce71f55e5ffbf585740ce.jpg
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-11-09 17:46:39 Error: [MissingActionException] Action UsersController::uploads() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'uploads',
+)
+Request URL: /messageboard/Users/uploads/user_6/1699262720-1449604645-cf3aa769d2fce71f55e5ffbf585740ce.jpg
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-11-09 17:46:47 Error: [MissingActionException] Action UsersController::uploads() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'uploads',
+)
+Request URL: /messageboard/Users/uploads/user_6/1699262720-1449604645-cf3aa769d2fce71f55e5ffbf585740ce.jpg
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-11-09 17:46:54 Error: [MissingActionException] Action UsersController::uploads() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'uploads',
+)
+Request URL: /messageboard/Users/uploads/user_6/1699262720-1449604645-cf3aa769d2fce71f55e5ffbf585740ce.jpg
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-11-09 17:46:59 Error: [MissingActionException] Action UsersController::uploads() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'uploads',
+)
+Request URL: /messageboard/Users/uploads/user_6/1699262720-1449604645-cf3aa769d2fce71f55e5ffbf585740ce.jpg
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-11-09 17:47:28 Error: [MissingActionException] Action UsersController::uploads() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'uploads',
+)
+Request URL: /messageboard/Users/uploads/user_6/1699262720-1449604645-cf3aa769d2fce71f55e5ffbf585740ce.jpg
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-11-09 17:47:35 Error: [MissingActionException] Action UsersController::uploads() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'uploads',
+)
+Request URL: /messageboard/Users/uploads/user_6/1699262720-1449604645-cf3aa769d2fce71f55e5ffbf585740ce.jpg
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-11-09 17:47:58 Error: [MissingActionException] Action UsersController::uploads() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'uploads',
+)
+Request URL: /messageboard/Users/uploads/user_6/1699262720-1449604645-cf3aa769d2fce71f55e5ffbf585740ce.jpg
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-11-09 17:48:00 Error: [MissingActionException] Action UsersController::uploads() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'uploads',
+)
+Request URL: /messageboard/Users/uploads/user_6/1699262720-1449604645-cf3aa769d2fce71f55e5ffbf585740ce.jpg
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-11-09 17:48:33 Error: [MissingActionException] Action UsersController::uploads() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'uploads',
+)
+Request URL: /messageboard/Users/uploads/user_6/1699262720-1449604645-cf3aa769d2fce71f55e5ffbf585740ce.jpg
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-11-09 17:48:35 Error: [MissingActionException] Action UsersController::uploads() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'uploads',
+)
+Request URL: /messageboard/Users/uploads/user_6/1699262720-1449604645-cf3aa769d2fce71f55e5ffbf585740ce.jpg
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/Vendor/cakephp/cakephp/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /Applications/XAMPP/xamppfiles/htdocs/messageboard/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
